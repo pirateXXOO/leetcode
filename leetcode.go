@@ -1016,3 +1016,274 @@ package main
 // }
 
 //////////
+
+// type ListNode struct {
+// 	Val  int
+// 	Next *ListNode
+// }
+
+// func reverse(head *ListNode) *ListNode {
+// 	var prev *ListNode
+// 	for head != nil {
+// 		next := head.Next
+// 		head.Next = prev
+// 		prev = head
+// 		head = next
+// 	}
+// 	return prev
+// }
+
+// func isPalindrome(head *ListNode) bool {
+// 	fast := head
+// 	slow := head
+
+// 	for fast != nil && fast.Next != nil {
+// 		fast = fast.Next.Next
+// 		slow = slow.Next
+// 	}
+
+// 	if fast != nil {
+// 		slow = slow.Next
+// 	}
+
+// 	slow = reverse(slow)
+
+// 	fast = head
+
+// 	for slow != nil {
+// 		if fast.Val != slow.Val {
+// 			return false
+// 		}
+// 		fast = fast.Next
+// 		slow = slow.Next
+// 	}
+
+// 	return true
+
+// }
+
+// func hasCycle(head *ListNode) bool {
+// 	if head == nil {
+// 		return false
+// 	}
+
+// 	slow := head
+// 	fast := head
+
+// 	for fast != nil && fast.Next != nil {
+// 		slow = slow.Next
+// 		fast = fast.Next.Next
+// 		if slow == fast {
+// 			return true
+// 		}
+// 	}
+
+// 	return false
+
+// }
+
+// type TreeNode struct {
+// 	Val   int
+// 	Left  *TreeNode
+// 	Right *TreeNode
+// }
+
+// func maxDepth(root *TreeNode) int {
+// 	if root == nil {
+// 		return 0
+// 	}
+// 	if root.Left == nil && root.Right == nil {
+// 		return 1
+// 	}
+// 	maxLeft := maxDepth(root.Left)
+// 	maxRight := maxDepth(root.Right)
+
+// 	if maxLeft > maxRight {
+// 		return maxLeft + 1
+// 	} else {
+// 		return maxRight + 1
+// 	}
+// }
+
+// func isValidBST(root *TreeNode) bool {
+// 	min := -1 << (8*unsafe.Sizeof(1) - 1)
+// 	max := 1<<(8*unsafe.Sizeof(1)-1) - 1
+// 	return _isValidBST(root, min, max)
+// }
+
+// func _isValidBST(root *TreeNode, min int, max int) bool {
+// 	if root == nil {
+// 		return true
+// 	}
+
+// 	v := root.Val
+
+// 	if root.Right != nil {
+// 		if r := root.Right.Val; r <= min || r >= max || r <= v {
+// 			return false
+// 		}
+// 	}
+
+// 	if root.Left != nil {
+// 		if l := root.Left.Val; l >= max || l <= min || l >= v {
+// 			return false
+// 		}
+// 	}
+
+// 	return _isValidBST(root.Right, v, max) && _isValidBST(root.Left, min, v)
+// }
+
+// func isValidBST(root *TreeNode) bool {
+// 	val := -1 << (8*unsafe.Sizeof(1) - 1)
+// 	cur := root
+// 	for cur != nil {
+// 		if cur.Left == nil {
+// 			if cur.Val > val {
+// 				val = cur.Val
+// 			} else {
+// 				return false
+// 			}
+// 			cur = cur.Right
+// 		} else {
+// 			prev := cur.Left
+// 			for prev.Right != nil && prev.Right != cur {
+// 				prev = prev.Right
+// 			}
+
+// 			if prev.Right == nil {
+// 				prev.Right = cur
+// 				cur = cur.Left
+// 			} else {
+// 				if cur.Val > val {
+// 					val = cur.Val
+// 				} else {
+// 					return false
+// 				}
+// 				prev.Right = nil
+// 				cur = cur.Right
+// 			}
+// 		}
+// 	}
+// 	return true
+// }
+
+// func isSymmetricHelper(left *TreeNode, right *TreeNode) bool {
+// 	if left == nil && right == nil {
+// 		return true
+// 	}
+
+// 	if left == nil || right == nil || left.Val != right.Val {
+// 		return false
+// 	}
+
+// 	return isSymmetricHelper(left.Left, right.Right) && isSymmetricHelper(left.Right, right.Left)
+// }
+
+// func isSymmetric(root *TreeNode) bool {
+// 	if root == nil {
+// 		return true
+// 	}
+// 	return isSymmetricHelper(root.Left, root.Right)
+// }
+
+// func levelOrder(root *TreeNode) [][]int {
+// 	var ret [][]int
+// 	if root == nil {
+// 		return ret
+// 	}
+
+// 	q := []*TreeNode{root}
+
+// 	for i := 0; len(q) > 0; i++ {
+// 		ret = append(ret, []int{})
+// 		p := []*TreeNode{}
+// 		for j := 0; j < len(q); j++ {
+// 			node := q[j]
+// 			ret[i] = append(ret[i], node.Val)
+// 			if node.Left != nil {
+// 				p = append(p, node.Left)
+// 			}
+// 			if node.Right != nil {
+// 				p = append(p, node.Right)
+// 			}
+// 		}
+
+// 		q = p
+// 	}
+
+// 	return ret
+
+// }
+
+// func levelOrder(root *TreeNode) [][]int {
+// 	res := [][]int{}
+// 	if root == nil {
+// 		return res
+// 	}
+
+// 	var queue = []*TreeNode{root}
+// 	fmt.Println("len queue", len(queue))
+// 	for _, i := range queue {
+// 		fmt.Println(i.Val)
+// 	}
+// 	fmt.Println()
+// 	fmt.Println()
+
+// 	var level int
+// 	for len(queue) > 0 {
+// 		counter := len(queue)
+// 		res = append(res, []int{})
+// 		fmt.Println("res", res)
+// 		for 0 < counter {
+// 			fmt.Println()
+// 			fmt.Println("res", res)
+// 			for _, i := range queue {
+// 				fmt.Println(i.Val)
+// 			}
+// 			fmt.Println("counter: ", counter)
+// 			counter--
+// 			if queue[0].Left != nil {
+// 				queue = append(queue, queue[0].Left)
+// 				for num, i := range queue {
+// 					fmt.Println(num, i.Val)
+// 				}
+// 				fmt.Println("len queue", len(queue))
+// 			}
+// 			if queue[0].Right != nil {
+// 				queue = append(queue, queue[0].Right)
+// 				for num, i := range queue {
+// 					fmt.Println(num, i.Val)
+// 				}
+// 				fmt.Println("len queue", len(queue))
+
+// 			}
+// 			res[level] = append(res[level], queue[0].Val)
+// 			queue = queue[1:]
+// 		}
+// 		level++
+// 	}
+// 	return res
+// }
+
+// func main() {
+// 	node1 := &TreeNode{3, nil, nil}
+// 	node1.Left = &TreeNode{9, nil, nil}
+// 	node1.Left.Left = &TreeNode{99, nil, nil}
+// 	node1.Right = &TreeNode{20, nil, nil}
+// 	node1.Right.Left = &TreeNode{15, nil, nil}
+// 	node1.Right.Right = &TreeNode{7, nil, nil}
+
+// 	res := levelOrder(node1)
+// 	fmt.Printf("res is %v \n", res)
+// }
+
+// func main() {
+// 	// val := -1 << (8*unsafe.Sizeof(1) - 1)
+// 	// fmt.Println(val)
+// 	// fmt.Println(math.MinInt)
+// 	// fmt.Println(math.MinInt8)
+// 	// fmt.Println(math.MinInt16)
+// 	// fmt.Println(math.MinInt32)
+// 	// fmt.Println(math.MinInt64)
+
+// }
