@@ -1015,7 +1015,8 @@ package main
 // 	}
 // }
 
-//////////
+////////// isPalindrome
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnv1oc/
 
 // type ListNode struct {
 // 	Val  int
@@ -1062,6 +1063,9 @@ package main
 
 // }
 
+////////// hasCycle
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnwzei/
+
 // func hasCycle(head *ListNode) bool {
 // 	if head == nil {
 // 		return false
@@ -1081,6 +1085,9 @@ package main
 // 	return false
 
 // }
+
+///////// maxDepth
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnd69e/
 
 // type TreeNode struct {
 // 	Val   int
@@ -1104,6 +1111,9 @@ package main
 // 		return maxRight + 1
 // 	}
 // }
+
+////////// isValidBST
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn08xg/
 
 // func isValidBST(root *TreeNode) bool {
 // 	min := -1 << (8*unsafe.Sizeof(1) - 1)
@@ -1167,6 +1177,9 @@ package main
 // 	return true
 // }
 
+///////// isSymmetric
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn7ihv/
+
 // func isSymmetricHelper(left *TreeNode, right *TreeNode) bool {
 // 	if left == nil && right == nil {
 // 		return true
@@ -1185,6 +1198,9 @@ package main
 // 	}
 // 	return isSymmetricHelper(root.Left, root.Right)
 // }
+
+///////// levelOrder
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnldjj/
 
 // func levelOrder(root *TreeNode) [][]int {
 // 	var ret [][]int
@@ -1286,4 +1302,45 @@ package main
 // 	// fmt.Println(math.MinInt32)
 // 	// fmt.Println(math.MinInt64)
 
+// }
+
+///////// sortedArrayToBST
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xninbt/
+
+// type TreeNode struct {
+// 	Val   int
+// 	Left  *TreeNode
+// 	Right *TreeNode
+// }
+
+// func sortedArrayToBST(nums []int) *TreeNode {
+// 	if len(nums) == 0 {
+// 		return nil
+// 	}
+// 	return sortedArrayToBSThelp(nums, 0, len(nums)-1)
+// }
+
+// func sortedArrayToBSThelp(nums []int, start int, end int) *TreeNode {
+// 	if start > end {
+// 		return nil
+// 	}
+// 	mid := (start + end) / 2
+// 	// var root TreeNode
+// 	root := new(TreeNode)
+// 	root.Val = nums[mid]
+// 	root.Left = sortedArrayToBSThelp(nums, start, mid-1)
+// 	root.Right = sortedArrayToBSThelp(nums, mid+1, end)
+// 	return root
+// }
+
+// func main() {
+// 	// node1 := &TreeNode{3, nil, nil}
+// 	// node1.Left = &TreeNode{9, nil, nil}
+// 	// node1.Left.Left = &TreeNode{99, nil, nil}
+// 	// node1.Right = &TreeNode{20, nil, nil}
+// 	// node1.Right.Left = &TreeNode{15, nil, nil}
+// 	// node1.Right.Right = &TreeNode{7, nil, nil}
+// 	var nums []int = []int{1, 3}
+// 	res := sortedArrayToBST(nums)
+// 	fmt.Printf("res is %v \n", res)
 // }
