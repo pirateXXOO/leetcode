@@ -1344,3 +1344,44 @@ package main
 // 	res := sortedArrayToBST(nums)
 // 	fmt.Printf("res is %v \n", res)
 // }
+
+////////// merge sorted arrays
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnumcr/
+
+// func merge(nums1 []int, m int, nums2 []int, n int) {
+// 	var i int
+// 	var j int
+// 	for {
+// 		if j == n {
+// 			break
+// 		}
+// 		if i == m+j {
+// 			for j < n && i < m+n {
+// 				nums1[i] = nums2[j]
+// 				i++
+// 				j++
+// 			}
+// 			break
+// 		}
+// 		if nums1[i] >= nums2[j] {
+// 			for k := len(nums1) - 1; k > i; k-- {
+// 				nums1[k] = nums1[k-1]
+// 			}
+// 			fmt.Println(nums1)
+// 			nums1[i] = nums2[j]
+// 			i++
+// 			j++
+// 			continue
+// 		} else {
+// 			i++
+// 			continue
+// 		}
+// 	}
+// }
+
+// func main() {
+// 	nums1 := []int{1, 2, 3, 0, 0, 0}
+// 	nums2 := []int{2, 5, 6}
+// 	merge(nums1, 3, nums2, 3)
+// 	fmt.Println(nums1)
+// }
