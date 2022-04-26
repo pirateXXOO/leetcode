@@ -1385,3 +1385,29 @@ package main
 // 	merge(nums1, 3, nums2, 3)
 // 	fmt.Println(nums1)
 // }
+
+////////// firstBadVersion
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnto1s/
+
+func firstBadVersion(n int) int {
+	var min int = 1
+	var max int = n
+	mid := (max + min) / 2
+	for {
+		if max-min <= 1 {
+			if isBadVersion(min) {
+				return min
+			} else {
+				return max
+			}
+		}
+		if isBadVersion(mid) {
+			max = mid
+			mid = (max + min) / 2
+		} else {
+			min = mid
+			mid = (max + min) / 2
+		}
+
+	}
+}
