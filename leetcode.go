@@ -1389,25 +1389,83 @@ package main
 ////////// firstBadVersion
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnto1s/
 
-func firstBadVersion(n int) int {
-	var min int = 1
-	var max int = n
-	mid := (max + min) / 2
-	for {
-		if max-min <= 1 {
-			if isBadVersion(min) {
-				return min
-			} else {
-				return max
-			}
-		}
-		if isBadVersion(mid) {
-			max = mid
-			mid = (max + min) / 2
-		} else {
-			min = mid
-			mid = (max + min) / 2
-		}
+// func firstBadVersion(n int) int {
+// 	var min int = 1
+// 	var max int = n
+// 	mid := (max + min) / 2
+// 	for {
+// 		if max-min <= 1 {
+// 			if isBadVersion(min) {
+// 				return min
+// 			} else {
+// 				return max
+// 			}
+// 		}
+// 		if isBadVersion(mid) {
+// 			max = mid
+// 			mid = (max + min) / 2
+// 		} else {
+// 			min = mid
+// 			mid = (max + min) / 2
+// 		}
 
-	}
-}
+// 	}
+// }
+
+////////// climbStairs
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn854d/
+
+// func climbStairs(n int)int {
+// 	if n <= 1 {
+// 		return 1
+// 	}
+// 	if n < 3 {
+// 		return n
+// 	}
+// 	return climbStairs(n-1)+ climbStairs(n -2)
+// }
+
+// func climbStairs(n int) int {
+// 	return Fibonacci(n, 1, 1)
+// }
+
+// func Fibonacci(n, a, b int) int {
+// 	if n <= 1 {
+// 		return b
+// 	}
+// 	return Fibonacci(n-1, b, a+b)
+// }
+
+// func climbStairs(n int) int {
+// 	if n <= 1 {
+// 		return 1
+// 	}
+// 	dp := make([]int, 3)
+// 	dp[1] = 1
+// 	dp[2] = 2
+// 	for i := 3; i <= n; i++ {
+// 		dp = append(dp, dp[i-1]+dp[i-2])
+// 	}
+// 	return dp[n]
+// }
+
+// func climbStairs(n int) int {
+// 	if n <= 2 {
+// 		return n
+// 	}
+// 	first := 1
+// 	second := 2
+// 	sum := 0
+// 	for n > 2 {
+// 		sum = first + second
+// 		first = second
+// 		second = sum
+// 		n--
+// 	}
+// 	return sum
+// }
+
+// *	func climbStairs(n int) int {
+// *		sqrt := math.Sqrt(5)
+// *		return int((math.Pow((1+sqrt)/2, float64(n+1)) - math.Pow((1-sqrt)/2, float64(n+1))) / sqrt)
+// *	}
