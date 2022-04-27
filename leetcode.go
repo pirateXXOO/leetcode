@@ -1521,3 +1521,23 @@ package main
 // 	}
 // 	return maxPro
 // }
+
+///////// maxSubArray
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn3cg3/
+
+// func maxSubArray(nums []int) int {
+// 	length := len(nums)
+// 	cur := nums[0]
+// 	max := cur
+// 	for i := 1; i < length; i++ {
+// 		if cur > 0 {
+// 			cur += nums[i]
+// 		} else {
+// 			cur = nums[i]
+// 		}
+// 		if max < cur {
+// 			max = cur
+// 		}
+// 	}
+// 	return max
+// }
