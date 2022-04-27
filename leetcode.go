@@ -1469,3 +1469,55 @@ package main
 // *		sqrt := math.Sqrt(5)
 // *		return int((math.Pow((1+sqrt)/2, float64(n+1)) - math.Pow((1-sqrt)/2, float64(n+1))) / sqrt)
 // *	}
+
+////////// maxProfit
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn8fsh/
+
+// func maxProfit(prices []int) int {
+// if prices == nil || len(prices) == 0 {
+// 	return 0
+// }
+// 	var res int
+// 	for i := 0; i < len(prices)-1; i++ {
+// 		for j := i + 1; j < len(prices); j++ {
+// 			if prices[j]-prices[i] > res {
+// 				res = prices[j] - prices[i]
+// 			}
+// 		}
+// 	}
+// 	return res
+// }
+
+// func maxProfit(prices []int) int {
+// 	if prices == nil || len(prices) == 0 {
+// 		return 0
+// 	}
+// 	length := len(prices)
+// 	hold := -prices[0]
+// 	var nohold int
+// 	for i:=1;i<length;i++{
+// 		nohold = int(math.Max(float64(nohold), float64(hold+prices[i])))
+// 		hold = int(math.Max(float64(hold), float64(-prices[i])))
+// 	}
+// 	return nohold
+// }
+
+// func maxProfit(prices []int) int {
+// 	if prices == nil || len(prices) == 0 {
+// 		return 0
+// 	}
+// 	var maxPro int
+// 	min := prices[0]
+// 	for i := 1; i < len(prices); i++ {
+// 		if prices[i] < min {
+// 			min = prices[i]
+// 		}
+// 		// min = int(math.Min(float64(min), float64(prices[i])))
+// 		if prices[i] - min > maxPro{
+// 			maxPro = prices[i] - min
+// 		}
+// 		// maxPro = int(math.Max(float64(prices[i]-min), float64(maxPro)))
+
+// 	}
+// 	return maxPro
+// }
