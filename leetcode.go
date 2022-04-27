@@ -1762,3 +1762,20 @@ package main
 // 	var num int = 8
 // 	countPrimes(num)
 // }
+
+////////// isPowerOfThree
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnsdi2/
+
+// func isPowerOfThree(n int) bool {
+// 	if n == 1 {
+// 		return true
+// 	}
+// 	seed := 3
+// 	for i := 0; seed <= n; i++ {
+// 		if seed == n {
+// 			return true
+// 		}
+// 		seed = seed * 3
+// 	}
+// 	return false
+// }
