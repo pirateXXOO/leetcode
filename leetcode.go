@@ -1818,3 +1818,15 @@ package main
 // func main() {
 // 	fmt.Println(romanToInt("XLL"))
 // }
+
+////////// hammingWeight
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn1m0i/
+
+// func hammingWeight(num uint32) int {
+// 	var count int
+// 	for num != 0 {
+// 		count += int(num) & 1
+// 		num = num >> 1
+// 	}
+// 	return count
+// }
