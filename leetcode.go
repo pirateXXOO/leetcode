@@ -1675,3 +1675,90 @@ package main
 // 	}
 // 	return res
 // }
+
+////////// countPrimes
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnzlu6/
+
+// func isPrime(n int) bool {
+// 	if n < 2 {
+// 		return false
+// 	}
+// 	if n == 2 {
+// 		return true
+// 	}
+// 	for i := 2; i < n; i++ {
+// 		if n%i == 0 {
+// 			return false
+// 		}
+// 	}
+// 	return true
+// }
+
+// func countPrimes(n int) int {
+// 	if n < 3 {
+// 		return 0
+// 	}
+// 	var count int
+// 	for i := 2; i < n; i++ {
+// 		if isPrime(i) {
+// 			fmt.Println("i: ", i)
+// 			count++
+// 		}
+// 	}
+// 	fmt.Println("Count: ", count)
+// 	return count
+// }
+
+// func countPrimes(n int) int {
+// 	arr := make([]bool, n)
+// 	var cnt int
+// 	for i := 2; i < n; i++ {
+// 		if arr[i] {
+// 			continue
+// 		}
+// 		fmt.Println("i: ", i)
+// 		cnt++
+// 		for j := i; j < n; j = j + i {
+// 			arr[j] = true
+// 		}
+// 	}
+// 	fmt.Println(cnt)
+// 	return cnt
+// }
+
+// func isPrime(n int) bool {
+// 	for i := 2; i*i <= n; i++ {
+// 		if n%i == 0 {
+// 			return false
+// 		}
+// 	}
+// 	return true
+// }
+
+// func countPrimes(n int) int {
+// 	m := make([]int, n+1)
+// 	count := 0
+
+// 	for i := 0; i <= n; i++ {
+// 		m[i] = 1
+// 	}
+
+// 	for i := 2; i <= int(math.Sqrt(float64(n))); i++ {
+// 		if isPrime(i) {
+// 			for j := i * 2; j < n; j = j + i {
+// 				m[j] = 0
+// 			}
+// 		}
+// 	}
+// 	for i := 2; i < n; i++ {
+// 		if m[i] == 1 {
+// 			count++
+// 		}
+// 	}
+// 	return count
+// }
+
+// func main() {
+// 	var num int = 8
+// 	countPrimes(num)
+// }
