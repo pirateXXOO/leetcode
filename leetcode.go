@@ -1779,3 +1779,42 @@ package main
 // 	}
 // 	return false
 // }
+
+///////// romanToInt
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn4n7c/
+
+// func romanToInt(s string) int {
+// 	m := make(map[string]int)
+// 	m["I"] = 1
+// 	m["IV"] = 4
+// 	m["V"] = 5
+// 	m["IX"] = 9
+// 	m["X"] = 10
+// 	m["XL"] = 40
+// 	m["L"] = 50
+// 	m["XC"] = 90
+// 	m["C"] = 100
+// 	m["CD"] = 400
+// 	m["D"] = 500
+// 	m["CM"] = 900
+// 	m["M"] = 1000
+// 	var res int
+// 	for i := 0; i < len(s); i++ {
+// 		if i < len(s)-1 {
+// 			numString := string(s[i]) + string(s[i+1])
+// 			if m[numString] != 0 {
+// 				res += m[numString]
+// 				i++
+// 			} else {
+// 				res += m[string(s[i])]
+// 			}
+// 		} else {
+// 			res += m[string(s[i])]
+// 		}
+// 	}
+// 	return res
+// }
+
+// func main() {
+// 	fmt.Println(romanToInt("XLL"))
+// }
