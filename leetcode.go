@@ -1560,3 +1560,27 @@ package main
 // 	}
 // 	return int(math.Max(float64(dp0), float64(dp1)))
 // }
+
+////////// shuffleArray
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xn6gq1/
+
+// type Solution struct {
+// 	nums []int
+// }
+
+// func Constructor(nums []int) Solution {
+// 	return Solution{nums}
+// }
+
+// func (this *Solution) Reset() []int {
+// 	return this.nums
+// }
+
+// func (this *Solution) Shuffle() []int {
+// 	nums := make([]int, len(this.nums))
+// 	copy(nums, this.nums)
+// 	rand.Shuffle(len(nums), func(i, j int) {
+// 		nums[i], nums[j] = nums[j], nums[i]
+// 	})
+// 	return nums
+// }
