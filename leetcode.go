@@ -1584,3 +1584,75 @@ package main
 // 	})
 // 	return nums
 // }
+
+////////// minStack
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnkq37/
+
+// type MinStack struct {
+// 	sta []int
+// }
+
+// func Constructor() MinStack {
+// 	return MinStack{}
+// }
+
+// func (this *MinStack) Push(val int) {
+// 	this.sta = append(this.sta, val)
+// }
+
+// func (this *MinStack) Pop() {
+// 	this.sta = this.sta[:len(this.sta)-1]
+// }
+
+// func (this *MinStack) Top() int {
+// 	return this.sta[len(this.sta)-1]
+// }
+
+// func (this *MinStack) GetMin() int {
+// 	min := this.sta[0]
+// 	for i:=1;i< len(this.sta);i++{
+// 		if this.sta[i]< min {
+// 			min = this.sta[i]
+// 		}
+// 	}
+// 	return min
+// }
+
+// *type MinStack struct{
+// *	elems []int
+// *	mins []int
+// *}
+//
+// *func Constructor() MinStack{
+// *	return MinStack{
+// *		elems: make([]int, 0),
+// *		mins: make([]int, 0),
+// *	}
+// *}
+//
+// *func (this *MinStack) Push (x int){
+// *	this.elems = append(this.elems, x)
+// *	if len(this.mins) == 0 {
+// *		this.mins = append(this.mins, x)
+// *	} else {
+// *		if this.elems[len(this.elems)-1]>= x {
+// *			this.mins = append(this.mins, x)
+// *		}
+// *	}
+// *}
+//
+// *func (this *MinStack) Pop() {
+// *	elem := this.elems[len(this.elems)-1]
+// *	this.elems = this.elems[:len(this.elems)-1]
+// *	if elem == this.mins[len(this.mins)-1] {
+// *		this.mins = this.mins[:len(this.mins)-1]
+// *	}
+// *}
+//
+// *func (this *MinStack) Top() int {
+// *	return this.elems[len(this.elems)-1]
+// *}
+//
+// *func (this *MinStack) GetMin() int {
+// *	return this.mins[len(this.mins)-1]
+// *}
