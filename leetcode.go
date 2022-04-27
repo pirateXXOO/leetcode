@@ -1830,3 +1830,20 @@ package main
 // 	}
 // 	return count
 // }
+
+////////// hammingDistance
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnyode/
+
+// func hammingWeight(num uint32) int {
+// 	var count int
+// 	for num != 0 {
+// 		count += int(num) & 1
+// 		num = num >> 1
+// 	}
+// 	return count
+// }
+
+// func hammingDistance(x, y int) int {
+// 	num := x ^ y
+// 	return hammingWeight(uint32(num))
+// }
