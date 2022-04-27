@@ -1541,3 +1541,22 @@ package main
 // 	}
 // 	return max
 // }
+
+////////// rob
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnq4km/
+
+// func rob(nums []int) int {
+// 	if nums == nil || len(nums) == 0 {
+// 		return 0
+// 	}
+// 	length := len(nums)
+// 	dp0 := 0
+// 	dp1 := nums[0]
+
+// 	for i := 1; i < length; i++ {
+// 		temp := math.Max(float64(dp0), float64(dp1))
+// 		dp1 = dp0 + nums[i]
+// 		dp0 = int(temp)
+// 	}
+// 	return int(math.Max(float64(dp0), float64(dp1)))
+// }
