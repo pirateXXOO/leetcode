@@ -1847,3 +1847,19 @@ package main
 // 	num := x ^ y
 // 	return hammingWeight(uint32(num))
 // }
+
+///////// reverseBits
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnc5vg/
+
+// func reverseBits(num uint32) uint32 {
+// 	var res int
+// 	for i:=0;i<32;i++ {
+// 		if num % 2 == 1 {
+// 			res = res *2 +1
+// 		} else {
+// 			res = res *2
+// 		}
+// 		num = num /2
+// 	}
+// 	return uint32(res)
+// }
