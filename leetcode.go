@@ -1847,3 +1847,84 @@ package main
 // 	num := x ^ y
 // 	return hammingWeight(uint32(num))
 // }
+
+///////// generate Pascal's Triangle
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xncfnv/
+
+// func generate(numRows int) [][]int {
+// 	res := make([][]int, numRows)
+// 	for j := 1; j <= numRows; j++ {
+// 		res[j-1] = make([]int, j)
+// 	}
+// 	if numRows == 1 {
+// 		res[0][0] = 1
+// 		return res
+// 	} else if numRows == 2 {
+// 		res[0][0] = 1
+// 		res[1][0] = 1
+// 		res[1][1] = 1
+// 		return res
+// 	} else {
+// 		res[0][0] = 1
+// 		res[1][0] = 1
+// 		res[1][1] = 1
+// 		for i := 2; i < numRows; i++ {
+// 			for j := 0; j < numRows; j++ {
+// 				if j == 0 {
+// 					res[i][j] = 1
+// 					continue
+// 				}
+// 				if j == i {
+// 					res[i][j] = 1
+// 					break
+// 				}
+// 				res[i][j] = res[i-1][j-1] + res[i-1][j]
+// 			}
+// 		}
+// 		return res
+// 	}
+// }
+
+// func generate(numRows int) [][]int {
+// 	res := make([][]int, numRows)
+// 	for j := 1; j <= numRows; j++ {
+// 		res[j-1] = make([]int, j)
+// 	}
+// 	if numRows == 1 {
+// 		res[0][0] = 1
+// 		return res
+// 	} else if numRows == 2 {
+// 		res[0][0] = 1
+// 		res[1][0] = 1
+// 		res[1][1] = 1
+// 		return res
+// 	} else {
+// 		res[0][0] = 1
+// 		res[1][0] = 1
+// 		res[1][1] = 1
+// 		for i := 2; i < numRows; i++ {
+// 			for j := 0; j < numRows; j++ {
+// 				if j == 0 {
+// 					res[i][j] = 1
+// 					continue
+// 				}
+// 				if j == i {
+// 					res[i][j] = 1
+// 					break
+// 				}
+// 				if j > (i+1)/2 {
+// 					res[i][j] = res[i][i-j]
+// 				}
+// 				res[i][j] = res[i-1][j-1] + res[i-1][j]
+// 			}
+// 		}
+// 		return res
+// 	}
+// }
+
+// func main() {
+// 	for _, j := range generate(6) {
+// 		fmt.Println(j)
+// 	}
+// 	fmt.Println(generate(6))
+// }
