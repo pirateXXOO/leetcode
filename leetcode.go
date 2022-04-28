@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 ////////////  dedumplicateArray
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/x2gy9m/
 
@@ -1988,3 +1990,71 @@ package main
 // 	}
 // 	return res2 - res1
 // }
+
+////////// threeSum
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvpj16/
+func IfEqual(n11, n22 []int) bool {
+	// fmt.Println("n11n22", n11, n22)
+	n1 := make([]int, len(n11))
+	n2 := make([]int, len(n22))
+	copy(n1, n11)
+	copy(n2, n22)
+	// fmt.Println(n1, n2)
+	if len(n1) != len(n2) {
+		return false
+	}
+	for i := len(n1) - 1; i >= 0; i-- {
+		for j := len(n2) - 1; j >= 0; j-- {
+			if n1[i] == n2[j] {
+				n1 = append(n1[:i], n1[i+1:]...)
+				n2 = append(n2[:j], n2[j+1:]...)
+				break
+			} else if j == 0 {
+				return false
+			}
+		}
+	}
+	// fmt.Println("n11n22", n11, n22)
+	return len(n1)+len(n2) == 0
+}
+func IfExist(numsSlices [][]int, numSlice []int) bool {
+	// fmt.Println("res: ", numsSlices)
+	for _, i := range numsSlices {
+		// fmt.Println(i, numSlice)
+		if IfEqual(i, numSlice) {
+			return true
+		}
+	}
+	return false
+}
+func ThreeSum(nums []int) [][]int {
+	var res [][]int
+	if len(nums) < 3 {
+		return [][]int{}
+	}
+	for i := 0; i < len(nums)-2; i++ {
+		for j := i + 1; j < len(nums)-1; j++ {
+			for k := j + 1; k < len(nums); k++ {
+				// fmt.Println("nums: ", nums)
+				// fmt.Printf("i,j,k: %v, %v, %v\n", i, j, k)
+				a := nums[i]
+				b := nums[j]
+				c := nums[k]
+
+				if a+b+c == 0 {
+					// fmt.Printf("a, b, c, : %v, %v, %v\n", a, b, c)
+					compTemp := []int{a, b, c}
+					if !IfExist(res, compTemp) {
+						res = append(res, compTemp)
+					}
+				}
+			}
+		}
+	}
+	return res
+}
+
+func main() {
+	res := ThreeSum([]int{-1, 0, 1, 2, -1, -4})
+	fmt.Println(res)
+}
