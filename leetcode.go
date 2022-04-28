@@ -1977,14 +1977,14 @@ package main
 ////////// missingNumber
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnj4mt/
 
-func missingNumber(nums []int) int {
-	var res1 int
-	var res2 int
-	for _, i := range nums {
-		res1 = res1 + i
-	}
-	for i := 1; i <= len(nums); i++ {
-		res2 = res2 + i
-	}
-	return res2 - res1
-}
+// func missingNumber(nums []int) int {
+// 	var res1 int
+// 	var res2 int
+// 	for _, i := range nums {
+// 		res1 = res1 + i
+// 	}
+// 	for i := 1; i <= len(nums); i++ {
+// 		res2 = res2 + i
+// 	}
+// 	return res2 - res1
+// }
