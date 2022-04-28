@@ -1928,3 +1928,48 @@ package main
 // 	}
 // 	fmt.Println(generate(6))
 // }
+
+////////// isValidBracket
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/xnbcaj/
+
+// func isValid(s string) bool {
+// 	var res1 []string
+// 	for i := 0; i < len(s); i++ {
+// 		switch string(s[i]) {
+// 		case "(":
+// 			res1 = append(res1, ")")
+// 		case "[":
+// 			res1 = append(res1, "]")
+// 		case "{":
+// 			res1 = append(res1, "}")
+// 		case ")":
+// 			if len(res1) == 0 {
+// 				return false
+// 			} else if res1[len(res1)-1] == ")" {
+// 				res1 = res1[:len(res1)-1]
+// 				continue
+// 			} else {
+// 				return false
+// 			}
+// 		case "]":
+// 			if len(res1) == 0 {
+// 				return false
+// 			} else if res1[len(res1)-1] == "]" {
+// 				res1 = res1[:len(res1)-1]
+// 				continue
+// 			} else {
+// 				return false
+// 			}
+// 		case "}":
+// 			if len(res1) == 0 {
+// 				return false
+// 			} else if res1[len(res1)-1] == "}" {
+// 				res1 = res1[:len(res1)-1]
+// 				continue
+// 			} else {
+// 				return false
+// 			}
+// 		}
+// 	}
+// 	return len(res1) == 0
+// }
