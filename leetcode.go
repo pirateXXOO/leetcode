@@ -2281,3 +2281,44 @@ package main
 // 	}
 // 	return res
 // }
+
+////////// lengthOfLongestSubstring
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xv2kgi/
+
+// func lengthOfLongestSubstring(s string) int {
+// 	if len(s) < 2 {
+// 		return len(s)
+// 	}
+// 	var res1 []byte
+// 	// var res2 []byte
+// 	res1 = append(res1, s[0])
+// 	length := 1
+// 	for i := 1; i < len(s); i++ {
+// 		for j := 0; j < len(res1); j++ {
+// 			if res1[j] == s[i] {
+// 				// fmt.Println("equal")
+// 				// fmt.Println(string(res1[j]), string(s[i]))
+// 				res1 = append(res1[j+1:], s[i])
+// 				// fmt.Println("***", string(res1))
+// 				break
+// 			} else {
+// 				if j == len(res1)-1 {
+// 					// fmt.Println("unequal")
+// 					// fmt.Println(string(res1), string(s[i]))
+// 					res1 = append(res1, s[i])
+// 					if length < len(res1) {
+// 						length = len(res1)
+// 					}
+// 					break
+// 				}
+// 			}
+// 			// fmt.Println("***", string(res1))
+// 		}
+// 	}
+// 	return length
+// }
+
+// func main() {
+// 	res := lengthOfLongestSubstring("dvdf")
+// 	fmt.Println(res)
+// }
