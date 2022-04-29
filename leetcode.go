@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"sort"
-)
-
 ////////////  dedumplicateArray
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/x2gy9m/
 
@@ -2058,45 +2053,45 @@ import (
 // 	return res
 // }
 
-func threeSum(nums []int) [][]int {
-	var res [][]int
-	if len(nums) < 3 {
-		return res
-	}
+// func threeSum(nums []int) [][]int {
+// 	var res [][]int
+// 	if len(nums) < 3 {
+// 		return res
+// 	}
 
-	sort.Ints(nums)
-	for i := 0; i < len(nums)-2; i++ {
-		if nums[i] > 0 {
-			break
-		}
-		if i > 0 && nums[i-1] == nums[i] {
-			continue
-		}
-		for j, k := i+1, len(nums)-1; j < k; {
-			sum := nums[i] + nums[j] + nums[k]
-			if sum == 0 {
-				tmp := []int{nums[i], nums[j], nums[k]}
-				res = append(res, tmp)
-				for j+1 < k && nums[j] == nums[j+1] {
-					j++
-				}
-				for k-1 > j && nums[k] == nums[k-1] {
-					k--
-				}
-				j++
-				k--
-			} else if sum > 0 {
-				k--
-			} else {
-				j++
-			}
+// 	sort.Ints(nums)
+// 	for i := 0; i < len(nums)-2; i++ {
+// 		if nums[i] > 0 {
+// 			break
+// 		}
+// 		if i > 0 && nums[i-1] == nums[i] {
+// 			continue
+// 		}
+// 		for j, k := i+1, len(nums)-1; j < k; {
+// 			sum := nums[i] + nums[j] + nums[k]
+// 			if sum == 0 {
+// 				tmp := []int{nums[i], nums[j], nums[k]}
+// 				res = append(res, tmp)
+// 				for j+1 < k && nums[j] == nums[j+1] {
+// 					j++
+// 				}
+// 				for k-1 > j && nums[k] == nums[k-1] {
+// 					k--
+// 				}
+// 				j++
+// 				k--
+// 			} else if sum > 0 {
+// 				k--
+// 			} else {
+// 				j++
+// 			}
 
-		}
-	}
-	return res
-}
+// 		}
+// 	}
+// 	return res
+// }
 
-func main() {
-	res := threeSum([]int{-1, 0, 1, 2, -1, -4})
-	fmt.Println(res)
-}
+// func main() {
+// 	res := threeSum([]int{-1, 0, 1, 2, -1, -4})
+// 	fmt.Println(res)
+// }
