@@ -2202,3 +2202,82 @@ package main
 // 		}
 // 	}
 // }
+
+////////// groupAnagrams
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvaszc/
+
+// func IsEqual(a, b string) bool {
+// 	if len(a) != len(b) {
+// 		return false
+// 	}
+
+// 	aa := strings.Split(a, "")
+// 	bb := strings.Split(b, "")
+// 	sort.Strings(aa)
+// 	sort.Strings(bb)
+
+// 	for i := 0; i < len(aa); i++ {
+// 		if aa[i] != bb[i] {
+// 			return false
+// 		}
+// 	}
+// 	return true
+// }
+
+// func GroupAnagrams(strs []string) [][]string {
+// 	var res [][]string
+// 	res = append(res, []string{strs[0]})
+// 	if len(strs) < 2 {
+// 		return res
+// 	}
+
+// 	for i := 1; i < len(strs); i++ {
+// 		for j := 0; j < len(res); j++ {
+
+// 			if IsEqual(res[j][0], strs[i]) {
+// 				res[j] = append(res[j], strs[i])
+// 				break
+// 			} else {
+// 				if j == len(res)-1 {
+// 					res = append(res, []string{strs[i]})
+// 					break
+// 				}
+// 			}
+// 		}
+// 	}
+// 	return res
+// }
+
+// func main() {
+// 	input := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
+// 	res := GroupAnagrams(input)
+// 	fmt.Println(res)
+// }
+// func aSort(s string) string {
+// 	x := []byte(s)
+// 	sort.Slice(x, func(i, j int) bool { return x[i] < x[j] })
+// 	return string(x)
+// }
+// func groupAnagrams(strs []string) [][]string {
+// 	if len(strs) == 0 {
+// 		return [][]string{}
+// 	}
+// 	rMap := make(map[string][]int, 0)
+// 	for i, v := range strs {
+// 		str := aSort(v)
+// 		if _, ok := rMap[str]; !ok {
+// 			rMap[str] = []int{i}
+// 		} else {
+// 			rMap[str] = append(rMap[str], i)
+// 		}
+// 	}
+// 	res := make([][]string, 0)
+// 	for _, v := range rMap {
+// 		a := make([]string, 0)
+// 		for _, x := range v {
+// 			a = append(a, strs[x])
+// 		}
+// 		res = append(res, a)
+// 	}
+// 	return res
+// }
