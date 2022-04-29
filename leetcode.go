@@ -2095,3 +2095,110 @@ package main
 // 	res := threeSum([]int{-1, 0, 1, 2, -1, -4})
 // 	fmt.Println(res)
 // }
+
+////////// setZeros
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvmy42/
+
+// func setZeroes(matrix [][]int) {
+// 	col := make([]bool, len(matrix[0]))
+// 	row := make([]bool, len(matrix))
+
+// 	for i, rowRes := range matrix {
+// 		for j, colRes := range rowRes {
+// 			if colRes == 0 {
+// 				col[j] = true
+// 				row[i] = true
+// 			}
+// 		}
+// 	}
+// 	for i, rowBool := range row {
+// 		if rowBool {
+// 			for j := 0; j < len(matrix[i]); j++ {
+// 				matrix[i][j] = 0
+// 			}
+// 		}
+// 	}
+
+// 	for j, colBool := range col {
+// 		if colBool {
+// 			for i := 0; i < len(matrix); i++ {
+// 				matrix[i][j] = 0
+// 			}
+// 		}
+// 	}
+// }
+
+// func setZeroes(matrix [][]int) {
+// 	if matrix == nil || len(matrix) == 0 && len(matrix[0]) == 0 {
+// 		return
+// 	}
+
+// 	var firstRow bool
+// 	var firstCol bool
+// 	for i := 0; i < len(matrix[0]); i++ {
+// 		if matrix[0][i] == 0 {
+// 			firstRow = true
+// 			break
+// 		}
+// 	}
+// 	for i := 0; i < len(matrix); i++ {
+// 		if matrix[i][0] == 0 {
+// 			firstCol = true
+// 			break
+// 		}
+// 	}
+
+// 	if len(matrix) == 1 {
+// 		if firstRow {
+// 			for i := 0; i < len(matrix[0]); i++ {
+// 				matrix[0][i] = 0
+// 			}
+// 		} else {
+// 			return
+// 		}
+// 	}
+// 	if len(matrix[0]) == 1 {
+// 		if firstCol {
+// 			for i := 0; i < len(matrix); i++ {
+// 				matrix[i][0] = 0
+// 			}
+// 		} else {
+// 			return
+// 		}
+// 	}
+
+// 	for i := 1; i < len(matrix); i++ {
+// 		for j := 1; j < len(matrix[0]); j++ {
+// 			if matrix[i][j] == 0 {
+// 				matrix[0][j] = 0
+// 				matrix[i][0] = 0
+// 			}
+// 		}
+// 	}
+
+// 	for i := 1; i < len(matrix[0]); i++ {
+// 		if matrix[0][i] == 0 {
+// 			for j := 1; j < len(matrix); j++ {
+// 				matrix[j][i] = 0
+// 			}
+// 		}
+// 	}
+
+// 	for i := 1; i < len(matrix); i++ {
+// 		if matrix[i][0] == 0 {
+// 			for k := 1; k < len(matrix[0]); k++ {
+// 				matrix[i][k] = 0
+// 			}
+// 		}
+// 	}
+// 	if firstRow {
+// 		for i := 0; i < len(matrix[0]); i++ {
+// 			matrix[0][i] = 0
+// 		}
+// 	}
+// 	if firstCol {
+// 		for i := 0; i < len(matrix); i++ {
+// 			matrix[i][0] = 0
+// 		}
+// 	}
+// }
