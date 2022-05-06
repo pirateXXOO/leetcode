@@ -2441,3 +2441,33 @@ package main
 // 	carry = sum / 10
 // 	helper(preNode.Next, l1, l2, carry)
 // }
+
+////////// oddEvenList
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvdwtj/
+// type ListNode struct {
+// 	Val  int
+// 	Next *ListNode
+// }
+
+// func oddEvenList(head *ListNode) *ListNode {
+
+// 	if head == nil || head.Next == nil {
+// 		return head
+// 	}
+
+// 	oddTemp := head
+// 	evenTemp := head.Next
+// 	evenHead := head.Next
+
+// 	for evenTemp != nil && evenTemp.Next != nil {
+// 		oddTemp.Next = oddTemp.Next.Next
+
+// 		evenTemp.Next = evenTemp.Next.Next
+
+// 		oddTemp = oddTemp.Next
+// 		evenTemp = evenTemp.Next
+// 	}
+
+// 	oddTemp.Next = evenHead
+// 	return head
+// }
