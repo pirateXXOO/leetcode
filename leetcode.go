@@ -2382,3 +2382,62 @@ package main
 // 	var nums []int = []int{2, 1, 5, 0, 4, 6}
 // 	increasingTriplet(nums)
 // }
+
+////////// addTwoNumbers
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvw73v/
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+// func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+// 	dummyNode := new(ListNode)
+// 	preNode := dummyNode
+
+// 	var carry int
+
+// 	for l1 != nil || l2 != nil || carry != 0 {
+// 		sum := carry
+// 		if l1 != nil {
+// 			sum += l1.Val
+// 			l1 = l1.Next
+// 		}
+// 		if l2 != nil {
+// 			sum += l2.Val
+// 			l2 = l2.Next
+// 		}
+// 		preNode.Next = new(ListNode)
+// 		preNode.Next.Val = sum % 10
+
+// 		carry = sum / 10
+// 		preNode = preNode.Next
+// 	}
+
+// 	return dummyNode.Next
+// }
+
+// func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+// 	dummyNode := new(ListNode)
+// 	helper(dummyNode, l1, l2, 0)
+// 	return dummyNode.Next
+// }
+
+// func helper(preNode, l1, l2 *ListNode, carry int) {
+// 	if l1 == nil && l2 == nil && carry == 0 {
+// 		return
+// 	}
+// 	sum := carry
+
+// 	if l1 != nil {
+// 		sum += l1.Val
+// 		l1 = l1.Next
+// 	}
+// 	if l2 != nil {
+// 		sum += l2.Val
+// 		l2 = l2.Next
+// 	}
+// 	preNode.Next = new(ListNode)
+// 	preNode.Next.Val = sum % 10
+// 	carry = sum / 10
+// 	helper(preNode.Next, l1, l2, carry)
+// }
