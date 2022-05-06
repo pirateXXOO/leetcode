@@ -2471,3 +2471,46 @@ package main
 // 	oddTemp.Next = evenHead
 // 	return head
 // }
+
+////////// getIntersectionNode
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xv02ut/
+
+// type ListNode struct {
+// 	Val  int
+// 	Next *ListNode
+// }
+
+// func getIntersectionNode(headA, headB *ListNode) *ListNode {
+// 	currA := headA
+// 	currB := headB
+
+// 	var countA int
+// 	var countB int
+
+// 	for currA != nil {
+// 		countA++
+// 		currA = currA.Next
+// 	}
+// 	for currB != nil {
+// 		countB++
+// 		currB = currB.Next
+// 	}
+// 	currA = headA
+// 	currB = headB
+
+// 	for i := 0; i < countA-countB; i++ {
+// 		currA = currA.Next
+// 	}
+// 	for i := 0; i < countB-countA; i++ {
+// 		currB = currB.Next
+// 	}
+
+// 	for currA != nil {
+// 		if currA == currB {
+// 			return currA
+// 		}
+// 		currA = currA.Next
+// 		currB = currB.Next
+// 	}
+// 	return nil
+// }
