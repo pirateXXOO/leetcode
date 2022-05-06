@@ -2358,3 +2358,27 @@ package main
 // 	}
 // 	return s[start : start+maxLen]
 // }
+
+////////// increasingTriplet
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvvuqg/
+
+// func increasingTriplet(nums []int) bool {
+// 	var min int = math.MaxInt
+// 	var mid int = math.MaxInt
+
+// 	for i := 0; i < len(nums); i++ {
+// 		if nums[i] <= min {
+// 			min = nums[i]
+// 		} else if nums[i] <= mid {
+// 			mid = nums[i]
+// 		} else {
+// 			return true
+// 		}
+// 	}
+// 	return false
+// }
+
+// func main() {
+// 	var nums []int = []int{2, 1, 5, 0, 4, 6}
+// 	increasingTriplet(nums)
+// }
