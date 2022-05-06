@@ -2322,3 +2322,39 @@ package main
 // 	res := lengthOfLongestSubstring("dvdf")
 // 	fmt.Println(res)
 // }
+
+////////// longestPalindrome
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvn3ke/
+// func longestPalindrome(s string) string {
+// 	if len(s) < 2 {
+// 		return s
+// 	}
+
+// 	var start int
+// 	var maxLen int
+// 	length := len(s)
+
+// 	for i := 0; i < length; {
+// 		if length-i <= maxLen/2 {
+// 			break
+// 		}
+
+// 		left := i
+// 		right := i
+
+// 		for right < length-1 && s[right+1] == s[right] {
+// 			right++
+// 		}
+// 		i = right + 1
+// 		for right < length-1 && left > 0 && s[right+1] == s[left-1] {
+// 			right++
+// 			left--
+// 		}
+// 		if right-left+1 > maxLen {
+// 			start = left
+// 			maxLen = right - left + 1
+// 		}
+
+// 	}
+// 	return s[start : start+maxLen]
+// }
