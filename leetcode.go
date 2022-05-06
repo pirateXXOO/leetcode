@@ -2385,10 +2385,10 @@ package main
 
 ////////// addTwoNumbers
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvw73v/
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+// type ListNode struct {
+// 	Val  int
+// 	Next *ListNode
+// }
 
 // func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 // 	dummyNode := new(ListNode)
