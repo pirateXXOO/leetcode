@@ -2598,3 +2598,66 @@ type TreeNode struct {
 // 	}
 // 	return
 // }
+
+////////// zigzagLevelOrder
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvle7s/
+
+// func levelOrder(root *TreeNode) []int {
+// 	var res []int
+
+// 	if root == nil {
+// 		return res
+// 	}
+
+// 	var arr []*TreeNode
+// 	arr = append(arr, root)
+
+// 	for len(arr) > 0 {
+// 		length := len(arr)
+// 		for i := 0; i < length; i++ {
+// 			node := arr[0]
+// 			if node.Left != nil {
+// 				arr = append(arr, node.Left)
+// 			}
+// 			if node.Right != nil {
+// 				arr = append(arr, node.Right)
+// 			}
+// 			res = append(res, node.Val)
+// 			arr = arr[1:]
+// 		}
+// 	}
+// 	return res
+// }
+
+func zigzagLevelOrder(root *TreeNode) [][]int {
+	var res [][]int
+	isReverse := true
+	if root == nil {
+		return res
+	}
+
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, root)
+	for len(queue) > 0 {
+		k := len(queue)
+		ans := make([]int, k)
+		for i := 0; i < k; i++ {
+			node := queue[i]
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+			if isReverse {
+				ans[i] = node.Val
+			} else {
+				ans[k-i-1] = node.Val
+			}
+		}
+		res = append(res, ans)
+		isReverse = !isReverse
+		queue = queue[k:]
+	}
+	return res
+}
