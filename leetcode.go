@@ -2514,3 +2514,87 @@ package main
 // 	}
 // 	return nil
 // }
+
+////////// inorderTraversal
+// https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xv7pir/
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+// func f(root *TreeNode) []int {
+// 	if root == nil {
+// 		return []int{}
+// 	}
+// 	var tmp []int
+// 	if root.Left != nil {
+// 		tmp = append(tmp, f(root.Left)...)
+// 	}
+
+// 	tmp = append(tmp, root.Val)
+
+// 	if root.Right != nil {
+// 		tmp = append(tmp, f(root.Right)...)
+// 	}
+
+// 	return tmp
+// }
+
+// func inorderTraversal(root *TreeNode) []int {
+// 	return f(root)
+// }
+
+// func inorderTraversal(root *TreeNode) (tmp []int) {
+// 	if root == nil {
+// 		return []int{}
+// 	}
+// 	if root.Left != nil {
+// 		tmp = append(tmp, inorderTraversal(root.Left)...)
+// 	}
+
+// 	tmp = append(tmp, root.Val)
+
+// 	if root.Right != nil {
+// 		tmp = append(tmp, inorderTraversal(root.Right)...)
+// 	}
+
+// 	return tmp
+// }
+
+// type Stack struct {
+// 	items []*TreeNode
+// }
+
+// func (m *Stack) Len() int {
+// 	return len(m.items)
+// }
+
+// func (m *Stack) Push(s *TreeNode) {
+// 	m.items = append(m.items, s)
+// }
+
+// func (m *Stack) Pop() *TreeNode {
+// 	last := m.items[len(m.items)-1]
+// 	m.items = m.items[:len(m.items)-1]
+// 	return last
+// }
+
+// func inorderTraversal(root *TreeNode) (ret []int) {
+// 	node := root
+// 	stack := &Stack{
+// 		items: make([]*TreeNode, 0),
+// 	}
+// 	for node != nil || stack.Len() > 0 {
+// 		if node != nil {
+// 			stack.Push(node)
+// 			node = node.Left
+// 		} else {
+// 			node = stack.Pop()
+// 			ret = append(ret, node.Val)
+// 			node = node.Right
+// 		}
+// 	}
+// 	return
+// }
