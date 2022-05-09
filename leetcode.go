@@ -2518,11 +2518,11 @@ package main
 ////////// inorderTraversal
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xv7pir/
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+// type TreeNode struct {
+// 	Val   int
+// 	Left  *TreeNode
+// 	Right *TreeNode
+// }
 
 // func f(root *TreeNode) []int {
 // 	if root == nil {
@@ -2629,35 +2629,35 @@ type TreeNode struct {
 // 	return res
 // }
 
-func zigzagLevelOrder(root *TreeNode) [][]int {
-	var res [][]int
-	isReverse := true
-	if root == nil {
-		return res
-	}
+// func zigzagLevelOrder(root *TreeNode) [][]int {
+// 	var res [][]int
+// 	isReverse := true
+// 	if root == nil {
+// 		return res
+// 	}
 
-	queue := make([]*TreeNode, 0)
-	queue = append(queue, root)
-	for len(queue) > 0 {
-		k := len(queue)
-		ans := make([]int, k)
-		for i := 0; i < k; i++ {
-			node := queue[i]
-			if node.Left != nil {
-				queue = append(queue, node.Left)
-			}
-			if node.Right != nil {
-				queue = append(queue, node.Right)
-			}
-			if isReverse {
-				ans[i] = node.Val
-			} else {
-				ans[k-i-1] = node.Val
-			}
-		}
-		res = append(res, ans)
-		isReverse = !isReverse
-		queue = queue[k:]
-	}
-	return res
-}
+// 	queue := make([]*TreeNode, 0)
+// 	queue = append(queue, root)
+// 	for len(queue) > 0 {
+// 		k := len(queue)
+// 		ans := make([]int, k)
+// 		for i := 0; i < k; i++ {
+// 			node := queue[i]
+// 			if node.Left != nil {
+// 				queue = append(queue, node.Left)
+// 			}
+// 			if node.Right != nil {
+// 				queue = append(queue, node.Right)
+// 			}
+// 			if isReverse {
+// 				ans[i] = node.Val
+// 			} else {
+// 				ans[k-i-1] = node.Val
+// 			}
+// 		}
+// 		res = append(res, ans)
+// 		isReverse = !isReverse
+// 		queue = queue[k:]
+// 	}
+// 	return res
+// }
