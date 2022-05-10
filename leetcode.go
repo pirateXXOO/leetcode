@@ -2661,3 +2661,44 @@ package main
 // 	}
 // 	return res
 // }
+
+////////// buildTree
+// https://leetcode.cn/leetbook/read/top-interview-questions-medium/xvix0d/
+
+// type TreeNode struct {
+// 	Val   int
+// 	Left  *TreeNode
+// 	Right *TreeNode
+// }
+
+// func buildTree(preorder []int, inorder []int) *TreeNode {
+// 	if len(inorder) == 0 {
+// 		return nil
+// 	}
+// 	// First of preorder is the root
+// 	res := new(TreeNode)
+// 	res.Val = preorder[0]
+// 	var index int
+// 	// Devide inorder to left and right
+// 	for ; index < len(inorder); index++ {
+// 		if preorder[0] == inorder[index] {
+// 			break
+// 		}
+// 	}
+
+// 	// If first of preorder in left, root.Left = preorder[0]
+// 	if index > 0 {
+// 		res.Left = buildTree(preorder[1:index+1], inorder[0:index])
+// 	}
+// 	// If first of preorder in right, root.Right = preorder[0]
+// 	if index < len(inorder)-1 {
+// 		res.Right = buildTree(preorder[index+1:], inorder[index+1:])
+// 	}
+// 	return res
+// }
+
+// func main() {
+// 	preorder := []int{3, 9, 20, 15, 7}
+// 	inorder := []int{9, 3, 15, 20, 7}
+// 	buildTree(preorder, inorder)
+// }
