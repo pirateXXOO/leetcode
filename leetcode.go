@@ -2702,3 +2702,57 @@ package main
 // 	inorder := []int{9, 3, 15, 20, 7}
 // 	buildTree(preorder, inorder)
 // }
+
+////////// connect
+// https://leetcode.cn/leetbook/read/top-interview-questions-medium/xvijdh/
+
+// type Node struct {
+// 	Val   int
+// 	Left  *Node
+// 	Right *Node
+// 	Next  *Node
+// }
+
+// func levelOrder(root *Node) []*Node {
+// 	var res []*Node
+// 	if root == nil {
+// 		return res
+// 	}
+
+// 	var arr []*Node
+// 	arr = append(arr, root)
+
+// 	for len(arr) > 0 {
+// 		length := len(arr)
+// 		for i := 0; i < length; i++ {
+// 			node := arr[0]
+// 			if node.Left != nil {
+// 				arr = append(arr, node.Left)
+// 			}
+// 			if node.Right != nil {
+// 				arr = append(arr, node.Right)
+// 			}
+// 			res = append(res, node)
+// 			arr = arr[1:]
+// 		}
+// 	}
+// 	return res
+// }
+
+// func connect(root *Node) *Node {
+// 	if root == nil || root.Left == nil {
+// 		return root
+// 	} else {
+// 		treeSlice := levelOrder(root)
+
+// 		var length int = 1
+// 		for len(treeSlice) != 0 {
+// 			for i := 0; i < length-1; i++ {
+// 				treeSlice[i].Next = treeSlice[i+1]
+// 			}
+// 			treeSlice = treeSlice[length:]
+// 			length = length * 2
+// 		}
+// 		return root
+// 	}
+// }
