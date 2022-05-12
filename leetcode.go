@@ -2756,3 +2756,56 @@ package main
 // 		return root
 // 	}
 // }
+
+////////// kthSmallest
+// https://leetcode.cn/leetbook/read/top-interview-questions-medium/xvuyv3/
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+// func helper(root *TreeNode) []int {
+// 	var arr []int
+// 	if root == nil {
+// 		return arr
+// 	}
+
+// 	if root.Left != nil {
+// 		arr = append(arr, helper(root.Left)...)
+// 	}
+// 	arr = append(arr, root.Val)
+// 	if root.Right != nil {
+// 		arr = append(arr, helper(root.Right)...)
+// 	}
+
+// 	return arr
+// }
+
+// func kthSmallest(root *TreeNode, k int) int {
+
+// 	arr := helper(root)
+// 	return arr[k-1]
+
+// }
+
+// func countNodes(n *TreeNode) int {
+// 	if n == nil {
+// 		return 0
+// 	}
+// 	return 1 + countNodes(n.Left) + countNodes(n.Right)
+// }
+
+// func kthSmallest(root *TreeNode, k int) int {
+
+// 	leftCount := countNodes(root.Left)
+
+// 	if leftCount >= k {
+// 		return kthSmallest(root.Left, k)
+// 	} else if leftCount+1 == k {
+// 		return root.Val
+// 	} else {
+// 		return kthSmallest(root.Right, k-leftCount-1)
+// 	}
+// }
