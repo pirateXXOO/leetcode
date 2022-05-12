@@ -2760,11 +2760,11 @@ package main
 ////////// kthSmallest
 // https://leetcode.cn/leetbook/read/top-interview-questions-medium/xvuyv3/
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+// type TreeNode struct {
+// 	Val   int
+// 	Left  *TreeNode
+// 	Right *TreeNode
+// }
 
 // func helper(root *TreeNode) []int {
 // 	var arr []int
