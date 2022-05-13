@@ -2885,3 +2885,40 @@ package main
 // 	}
 // 	return count
 // }
+
+/////////// letterCombinations
+// https://leetcode.cn/leetbook/read/top-interview-questions-medium/xv8ka1/
+
+// func letterCombinations(digits string) []string {
+// 	if len(digits) == 0 {
+// 		return []string{}
+// 	}
+// 	m := map[byte][]string{
+// 		'2': {"a", "b", "c"},
+// 		'3': {"d", "e", "f"},
+// 		'4': {"g", "h", "i"},
+// 		'5': {"j", "k", "l"},
+// 		'6': {"m", "n", "o"},
+// 		'7': {"p", "q", "r", "s"},
+// 		'8': {"t", "u", "v"},
+// 		'9': {"w", "x", "y", "z"},
+// 	}
+
+// 	s := m[digits[0]]
+// 	for i := 1; i < len(digits); i++ {
+// 		temp := make([]string, 0)
+// 		for j := 0; j < len(s); j++ {
+// 			t := m[digits[i]]
+// 			for k := 0; k < len(t); k++ {
+// 				temp = append(temp, s[j]+t[k])
+// 			}
+// 		}
+// 		s = temp
+// 	}
+// 	return s
+// }
+
+// func main() {
+// 	var digits string = "234"
+// 	fmt.Println(letterCombinations(digits))
+// }
