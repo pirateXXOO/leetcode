@@ -2809,3 +2809,79 @@ package main
 // 		return kthSmallest(root.Right, k-leftCount-1)
 // 	}
 // }
+
+////////// numIslands
+// https://leetcode.cn/leetbook/read/top-interview-questions-medium/xvtsnm/
+
+// func dfs(grid [][]byte, i int, j int) {
+// 	if i < 0 || i >= len(grid) || j < 0 || j >= len(grid[0]) || string(grid[i][j]) == "0" {
+// 		return
+// 	}
+// 	grid[i][j] = "0"[0]
+// 	dfs(grid, i-1, j)
+// 	dfs(grid, i, j-1)
+// 	dfs(grid, i, j+1)
+// 	dfs(grid, i+1, j)
+// }
+
+// func numIslands(grid [][]byte) int {
+// 	var count int
+// 	for i := 0; i < len(grid); i++ {
+// 		for j := 0; j < len(grid[0]); j++ {
+// 			if string(grid[i][j]) == "1" {
+// 				count++
+// 				dfs(grid, i, j)
+// 			}
+// 		}
+// 	}
+// 	return count
+// }
+
+// func bfs(grid [][]byte, x int, y int) {
+// 	grid[x][y] = "0"[0]
+// 	n := len(grid)
+// 	m := len(grid[0])
+// 	var arr []int
+
+// 	core := x*m + y
+// 	arr = append(arr, core)
+// 	for len(arr) != 0 {
+// 		core = arr[0]
+// 		arr := arr[1:]
+
+// 		i := core / m
+// 		j := core % m
+// 		if i > 0 && grid[i-1][j] == "1"[0] {
+// 			grid[i-1][j] = "0"[0]
+// 			arr = append(arr, (i-1)*m+j)
+// 		}
+// 		if i < n-1 && grid[i+1][j] == "1"[0] {
+// 			grid[i+1][j] = "0"[0]
+// 			arr = append(arr, (i+1)*m+j)
+// 		}
+// 		if j > 0 && grid[i][j-1] == "1"[0] {
+// 			grid[i][j-1] = "0"[0]
+// 			arr = append(arr, i*m+j-1)
+// 		}
+// 		if j < m-1 && grid[i][j+1] == "1"[0] {
+// 			grid[i][j+1] = "0"[0]
+// 			arr = append(arr, i*m+j+1)
+// 		}
+// 	}
+// }
+
+// func numIslands(grid [][]byte) int {
+// 	if len(grid) == 0 {
+// 		return 0
+// 	}
+// 	var count int
+// 	for i := 0; i < len(grid); i++ {
+// 		for j := 0; j < len(grid[0]); j++ {
+// 			if grid[i][j] == "1"[0] {
+// 				count++
+// 				bfs(grid, i, j)
+// 			}
+// 		}
+// 	}
+// 	return count
+// }
